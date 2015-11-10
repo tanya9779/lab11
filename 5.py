@@ -30,23 +30,15 @@ if __name__=='__main__':
     Arr=[]
     n=int(input())
     for i in range(n): 
-		Arr.append(Point(input()))
-    max_P=0
-    for i in range(n-2):
-        for j in range (i+1,n-1):
-            for k in range (j+1,n):
-                tmp=(Arr[i]-Arr[j]).radius()+(Arr[j]-Arr[k].radius()+(Arr[i]-Arr[k]).radius()
-                if tmp > max_P:
-					
-                    max_P=tmp
-p=(Arr[i]-Arr[j]).radius()+(Arr[j]-Arr[k].radius()+(Arr[i]-Arr[k]).radius()/2
+        Arr.append(Point(input()))
+
     max_S=0
     for i in range(n-2):
         for j in range (i+1,n-1):
             for k in range (j+1,n):
-                tmp=sqrt(p*(p-(Arr[i]-Arr[j]).radius()))*(p-(Arr[j]-Arr[k].radius()))*(p-(Arr[i]-Arr[k]).radius())))
+                p=( (Arr[i]-Arr[j]).radius()+(Arr[j]-Arr[k]).radius()+(Arr[i]-Arr[k]).radius())/2
+                tmp=math.sqrt(p*(p-(Arr[i]-Arr[j]).radius())*(p-(Arr[j]-Arr[k]).radius())*(p-(Arr[i]-Arr[k]).radius()))
                 if tmp > max_S:
-					
                     max_S=tmp
                     
     print(max_S)
